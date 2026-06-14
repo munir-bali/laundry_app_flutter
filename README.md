@@ -80,8 +80,6 @@ flutter run
 
 https://www.figma.com/design/5XznrYfvZtZvUM6msrNG1E/LAUNDRY?node-id=0-1&p=f&t=wsTtz3Dt61FslEqP-0
 
-##
-
 ## Screenshots
 
 ### Splash Screen
@@ -104,3 +102,5 @@ https://www.figma.com/design/5XznrYfvZtZvUM6msrNG1E/LAUNDRY?node-id=0-1&p=f&t=ws
 
 ### Account
 ![Account](screenshots/07_akun.jpeg)
+
+
