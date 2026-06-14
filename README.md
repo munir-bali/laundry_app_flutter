@@ -103,4 +103,4 @@ https://www.figma.com/design/5XznrYfvZtZvUM6msrNG1E/LAUNDRY?node-id=0-1&p=f&t=ws
 ![Status](screenshots/06_status_transaksi.jpeg)
 
 ### Account
-![Account](screenshots/07_akun.png)
+![Account](screenshots/07_akun.jpeg)
