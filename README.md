@@ -97,10 +97,10 @@ https://www.figma.com/design/5XznrYfvZtZvUM6msrNG1E/LAUNDRY?node-id=0-1&p=f&t=ws
 ![Home](screenshots/04_home.jpeg)
 
 ### List Order
-![Order](screenshots/05_order.jpeg)
+![Order](screenshots/05_list_order.jpeg)
 
 ### Status Transaksi
-![Status](screenshots/06_status.jpeg)
+![Status](screenshots/06_status_transaksi.jpeg)
 
 ### Account
-![Account](screenshots/07_account.png)
+![Account](screenshots/07_akun.png)
