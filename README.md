@@ -1,17 +1,106 @@
-# laundry_app_flutter
+# Laundry App Flutter
 
-A new Flutter project.
+Aplikasi Laundry berbasis Flutter yang dibuat berdasarkan desain UI/UX Figma untuk memenuhi tugas implementasi slicing Flutter.
 
-## Getting Started
+## Deskripsi
 
-This project is a starting point for a Flutter application.
+Aplikasi ini merupakan implementasi desain UI/UX laundry ke dalam Flutter menggunakan dummy data tanpa backend/database. Aplikasi memiliki fitur login, halaman utama, list order, status transaksi, dan halaman akun.
 
-A few resources to get you started if this is your first Flutter project:
+## Features
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+* Splash Screen
+* Get Started Page
+* Login Page
+* Home Page
+* List Order
+* Status Transaksi
+* Account Page
+* Logout Function
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## UX Principles
+
+Penerapan prinsip UI/UX pada aplikasi:
+
+* **Consistency** → penggunaan warna, layout, dan navigasi konsisten.
+* **Visibility** → informasi transaksi mudah dilihat.
+* **Feedback** → validasi login dan notifikasi logout.
+* **Simplicity** → navigasi sederhana dan mudah digunakan.
+
+## Dummy Login Account
+
+Email:
+
+```txt
+admin@gmail.com
+```
+
+Password:
+
+```txt
+123456
+```
+
+## Tech Stack
+
+* Flutter
+* Dart
+
+## Struktur Folder
+
+```txt
+lib/
+├── constants/
+├── pages/
+├── widgets/
+├── assets/
+└── main.dart
+```
+
+## Cara Menjalankan Project
+
+1. Clone repository
+
+```bash
+git clone <repository-url>
+```
+
+2. Install dependency
+
+```bash
+flutter pub get
+```
+
+3. Jalankan aplikasi
+
+```bash
+flutter run
+```
+
+## Link Figma
+
+https://www.figma.com/design/5XznrYfvZtZvUM6msrNG1E/LAUNDRY?node-id=0-1&p=f&t=wsTtz3Dt61FslEqP-0
+
+##
+
+## Screenshots
+
+### Splash Screen
+![Splash](screenshots/01_splash.png)
+
+### Get Started
+![Get Started](screenshots/02_get_started.png)
+
+### Login
+![Login](screenshots/03_login.png)
+
+### Home
+![Home](screenshots/04_home.png)
+
+### List Order
+![Order](screenshots/05_order.png)
+
+### Status Transaksi
+![Status](screenshots/06_status.png)
+
+### Account
+![Account](screenshots/07_account.png)
