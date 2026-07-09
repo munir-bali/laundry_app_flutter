@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../constants/app_colors.dart';
-import '../widgets/custom_bottom_navbar.dart';
-import 'order_page.dart';
+import 'package:laundry_app_flutter/constants/app_colors.dart';
+import 'package:laundry_app_flutter/views/order/order_page.dart';
+import 'package:laundry_app_flutter/widgets/custom_bottom_navbar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../constants/app_colors.dart';
-import '../widgets/custom_bottom_navbar.dart';
-import 'login_page.dart';
+import 'package:laundry_app_flutter/constants/app_colors.dart';
+import 'package:laundry_app_flutter/views/login/login_page.dart';
+import 'package:laundry_app_flutter/widgets/custom_bottom_navbar.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});

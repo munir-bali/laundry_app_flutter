@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import '../constants/app_colors.dart';
-import 'get_started_page.dart';
-import 'login_page.dart';
+import 'package:laundry_app_flutter/constants/app_colors.dart';
+import 'package:laundry_app_flutter/views/get_started/get_started_page.dart';
+import 'package:laundry_app_flutter/views/login/login_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});

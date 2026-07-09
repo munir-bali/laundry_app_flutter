@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import '../constants/app_colors.dart';
-import '../widgets/custom_bottom_navbar.dart';
-import 'status_page.dart';
+import 'package:laundry_app_flutter/constants/app_colors.dart';
+import 'package:laundry_app_flutter/widgets/custom_bottom_navbar.dart';
 
-class OrderPage extends StatelessWidget {
-  const OrderPage({super.key});
+class StatusPage extends StatelessWidget {
+  const StatusPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +12,10 @@ class OrderPage extends StatelessWidget {
           const Color(0xFFEAEAEA),
 
       // Bottom Navigation
-      bottomNavigationBar:
-        const CustomBottomNavbar(
-            currentIndex: 1,
-            ),
+        bottomNavigationBar:
+    const CustomBottomNavbar(
+  currentIndex: 1,
+),
 
       body: SafeArea(
         child: SingleChildScrollView(
@@ -48,45 +47,41 @@ class OrderPage extends StatelessWidget {
                     padding:
                         const EdgeInsets
                             .all(20),
-                    child: Column(
+                    child: Row(
+                      mainAxisAlignment:
+                          MainAxisAlignment
+                              .spaceBetween,
                       children: [
-                        Row(
-                          mainAxisAlignment:
-                              MainAxisAlignment
-                                  .spaceBetween,
+                        const Column(
+                          crossAxisAlignment:
+                              CrossAxisAlignment
+                                  .start,
                           children: [
-                            const Column(
-                              crossAxisAlignment:
-                                  CrossAxisAlignment
-                                      .start,
-                              children: [
-                                Text(
-                                  'SELAMAT DATANG,',
-                                  style:
-                                      TextStyle(
-                                    fontSize:
-                                        16,
-                                  ),
-                                ),
-                                Text(
-                                  'FEBRI',
-                                  style:
-                                      TextStyle(
-                                    fontSize:
-                                        24,
-                                    fontWeight:
-                                        FontWeight
-                                            .bold,
-                                  ),
-                                ),
-                              ],
+                            Text(
+                              'SELAMAT DATANG,',
+                              style:
+                                  TextStyle(
+                                fontSize:
+                                    16,
+                              ),
                             ),
-
-                            Image.asset(
-                              'lib/assets/images/delivery.png',
-                              width: 90,
+                            Text(
+                              'FEBRI',
+                              style:
+                                  TextStyle(
+                                fontSize:
+                                    24,
+                                fontWeight:
+                                    FontWeight
+                                        .bold,
+                              ),
                             ),
                           ],
+                        ),
+
+                        Image.asset(
+                          'lib/assets/images/delivery.png',
+                          width: 90,
                         ),
                       ],
                     ),
@@ -94,10 +89,10 @@ class OrderPage extends StatelessWidget {
                 ],
               ),
 
-              // List Order Card
+              // Status Card
               Transform.translate(
-                offset: const Offset(
-                    0, -40),
+                offset:
+                    const Offset(0, -40),
                 child: Container(
                   margin:
                       const EdgeInsets
@@ -130,7 +125,7 @@ class OrderPage extends StatelessWidget {
                     children: [
 
                       const Text(
-                        'LIST ORDER',
+                        'STATUS TRANSAKSI',
                         style:
                             TextStyle(
                           fontSize:
@@ -145,6 +140,8 @@ class OrderPage extends StatelessWidget {
                           height: 20),
 
                       Container(
+                        width:
+                            double.infinity,
                         padding:
                             const EdgeInsets
                                 .all(20),
@@ -155,101 +152,60 @@ class OrderPage extends StatelessWidget {
                           borderRadius:
                               BorderRadius.circular(
                                   15),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors
+                                  .grey
+                                  .shade200,
+                              blurRadius:
+                                  5,
+                            )
+                          ],
                         ),
                         child: Column(
                           children: [
 
-                            orderRow(
-                              'KILOAN',
-                              'X2',
-                              'Rp 6.000',
+                            statusRow(
+                              'UTURAN',
+                              '003',
                             ),
 
                             const SizedBox(
                                 height:
                                     25),
 
-                            orderRow(
-                              'KARPET',
-                              'X1',
-                              'Rp 20.000',
-                            ),
-
-                            const SizedBox(
-                                height:
-                                    25),
-
-                            orderRow(
-                              'VIP',
-                              'X1',
-                              'Rp 10.000',
-                            ),
-
-                            const SizedBox(
-                                height:
-                                    180),
-
-                            const Text(
+                            statusRow(
+                              'WAKTU ORDER',
                               '15.00\n1 JUNI 2026',
-                              textAlign:
-                                  TextAlign
-                                      .center,
-                              style:
-                                  TextStyle(
-                                fontSize:
-                                    15,
-                                fontStyle:
-                                    FontStyle
-                                        .italic,
-                              ),
+                            ),
+
+                            const SizedBox(
+                                height:
+                                    25),
+
+                            statusRow(
+                              'STATUS',
+                              'ON PROGRESS',
+                            ),
+
+                            const SizedBox(
+                                height:
+                                    25),
+
+                            statusRow(
+                              'ONGKIR',
+                              'GRATIS ONGKIR',
+                            ),
+
+                            const SizedBox(
+                                height:
+                                    25),
+
+                            statusRow(
+                              'TOTAL',
+                              'RP36.000',
                             ),
                           ],
-                        ),
-                      ),
-
-                      const SizedBox(
-                          height: 20),
-
-                      SizedBox(
-                        width:
-                            double.infinity,
-                        height: 55,
-                        child:
-                            ElevatedButton(
-                          onPressed:
-                              () {
-                            Navigator
-                                .push(
-                              context,
-                              MaterialPageRoute(
-                                builder:
-                                    (_) =>
-                                        const StatusPage(),
-                              ),
-                            );
-                          },
-                          style:
-                              ElevatedButton.styleFrom(
-                            backgroundColor:
-                                AppColors.primary,
-                            shape:
-                                RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.circular(
-                                      15),
-                            ),
-                          ),
-                          child:
-                              const Text(
-                            'LIHAT STATUS',
-                            style:
-                                TextStyle(
-                              color: Colors
-                                  .black,
-                              fontWeight:
-                                  FontWeight.bold,
-                            ),
-                          ),
                         ),
                       ),
                     ],
@@ -263,29 +219,38 @@ class OrderPage extends StatelessWidget {
     );
   }
 
-  Widget orderRow(
+  Widget statusRow(
     String title,
-    String qty,
-    String price,
+    String value,
   ) {
     return Row(
+      crossAxisAlignment:
+          CrossAxisAlignment.start,
       mainAxisAlignment:
           MainAxisAlignment
               .spaceBetween,
       children: [
-        Expanded(
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 15,
+            fontStyle:
+                FontStyle.italic,
+          ),
+        ),
+        Flexible(
           child: Text(
-            title,
+            value,
+            textAlign:
+                TextAlign.end,
             style:
                 const TextStyle(
-              fontSize: 16,
+              fontSize: 15,
               fontStyle:
                   FontStyle.italic,
             ),
           ),
         ),
-        Text(qty),
-        Text(price),
       ],
     );
   }

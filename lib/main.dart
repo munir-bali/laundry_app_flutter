@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'pages/splash_page.dart';
+import 'package:laundry_app_flutter/views/splash/splash_page.dart';
 
 void main() {
   runApp(const LaundryApp());

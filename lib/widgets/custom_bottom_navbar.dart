@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../pages/home_page.dart';
-import '../pages/order_page.dart';
-import '../pages/account_page.dart';
+import 'package:laundry_app_flutter/views/account/account_page.dart';
+import 'package:laundry_app_flutter/views/home/home_page.dart';
+import 'package:laundry_app_flutter/views/order/order_page.dart';
 
 class CustomBottomNavbar
     extends StatelessWidget {

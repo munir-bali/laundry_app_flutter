@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../constants/app_colors.dart';
-import 'login_page.dart';
+import 'package:laundry_app_flutter/constants/app_colors.dart';
+import 'package:laundry_app_flutter/views/login/login_page.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({super.key});

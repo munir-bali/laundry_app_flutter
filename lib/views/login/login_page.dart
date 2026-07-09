@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../constants/app_colors.dart';
-import '../widgets/custom_button.dart';
-import '../widgets/custom_textfield.dart';
-import 'home_page.dart';
+import 'package:laundry_app_flutter/constants/app_colors.dart';
+import 'package:laundry_app_flutter/views/home/home_page.dart';
+import 'package:laundry_app_flutter/widgets/custom_button.dart';
+import 'package:laundry_app_flutter/widgets/custom_textfield.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
