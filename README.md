@@ -86,21 +86,21 @@ https://www.figma.com/design/5XznrYfvZtZvUM6msrNG1E/LAUNDRY?node-id=0-1&p=f&t=ws
 ![Splash](screenshots/01_splash.png)
 
 ### Get Started
-![Get Started](screenshots/02_get_started.jpeg)
+![Get Started](screenshots/02_get_started.png)
 
 ### Login
-![Login](screenshots/03_login.jpeg)
+![Login](screenshots/03_login.png)
 
 ### Home
-![Home](screenshots/04_home.jpeg)
+![Home](screenshots/04_home.png)
 
 ### List Order
-![Order](screenshots/05_list_order.jpeg)
+![Order](screenshots/05_list_order.png)
 
 ### Status Transaksi
-![Status](screenshots/06_status_transaksi.jpeg)
+![Status](screenshots/06_status_transaksi.png)
 
 ### Account
-![Account](screenshots/07_akun.jpeg)
+![Account](screenshots/07_akun.png)
 
 
