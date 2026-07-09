@@ -1,10 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:laundry_app_flutter/constants/app_colors.dart';
+import 'package:laundry_app_flutter/providers/order_provider.dart';
 import 'package:laundry_app_flutter/views/status/status_page.dart';
 import 'package:laundry_app_flutter/widgets/custom_bottom_navbar.dart';
+import 'package:provider/provider.dart';
 
-class OrderPage extends StatelessWidget {
+class OrderPage extends StatefulWidget {
   const OrderPage({super.key});
+
+  @override
+  State<OrderPage> createState() =>
+      _OrderPageState();
+}
+
+class _OrderPageState
+    extends State<OrderPage> {
+  @override
+  void initState() {
+    super.initState();
+
+    final orderProvider =
+        context.read<OrderProvider>();
+
+    Future.microtask(
+      orderProvider.fetchOrders,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -144,67 +165,94 @@ class OrderPage extends StatelessWidget {
                       const SizedBox(
                           height: 20),
 
-                      Container(
-                        padding:
-                            const EdgeInsets
-                                .all(20),
-                        decoration:
-                            BoxDecoration(
-                          color:
-                              Colors.white,
-                          borderRadius:
-                              BorderRadius.circular(
-                                  15),
-                        ),
-                        child: Column(
-                          children: [
-
-                            orderRow(
-                              'KILOAN',
-                              'X2',
-                              'Rp 6.000',
+                      Consumer<OrderProvider>(
+                        builder:
+                            (context,
+                                orderProvider,
+                                child) {
+                          return Container(
+                            padding:
+                                const EdgeInsets
+                                    .all(20),
+                            decoration:
+                                BoxDecoration(
+                              color:
+                                  Colors.white,
+                              borderRadius:
+                                  BorderRadius.circular(
+                                      15),
                             ),
+                            child: Column(
+                              children: [
+                                if (orderProvider
+                                    .loading)
+                                  const Padding(
+                                    padding:
+                                        EdgeInsets
+                                            .symmetric(
+                                      vertical:
+                                          100,
+                                    ),
+                                    child:
+                                        CircularProgressIndicator(),
+                                  )
+                                else if (orderProvider
+                                        .error !=
+                                    null)
+                                  const Padding(
+                                    padding:
+                                        EdgeInsets
+                                            .symmetric(
+                                      vertical:
+                                          100,
+                                    ),
+                                    child: Text(
+                                      'Gagal mengambil data.',
+                                    ),
+                                  )
+                                else
+                                  ...orderProvider
+                                      .orders
+                                      .take(3)
+                                      .map(
+                                        (order) =>
+                                            Column(
+                                          children: [
+                                            orderRow(
+                                              order.title,
+                                              'X1',
+                                              'Rp ${order.price}',
+                                            ),
+                                            const SizedBox(
+                                              height:
+                                                  25,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
 
-                            const SizedBox(
-                                height:
-                                    25),
+                                const SizedBox(
+                                    height:
+                                        180),
 
-                            orderRow(
-                              'KARPET',
-                              'X1',
-                              'Rp 20.000',
+                                const Text(
+                                  '15.00\n1 JUNI 2026',
+                                  textAlign:
+                                      TextAlign
+                                          .center,
+                                  style:
+                                      TextStyle(
+                                    fontSize:
+                                        15,
+                                    fontStyle:
+                                        FontStyle
+                                            .italic,
+                                  ),
+                                ),
+                              ],
                             ),
-
-                            const SizedBox(
-                                height:
-                                    25),
-
-                            orderRow(
-                              'VIP',
-                              'X1',
-                              'Rp 10.000',
-                            ),
-
-                            const SizedBox(
-                                height:
-                                    180),
-
-                            const Text(
-                              '15.00\n1 JUNI 2026',
-                              textAlign:
-                                  TextAlign
-                                      .center,
-                              style:
-                                  TextStyle(
-                                fontSize:
-                                    15,
-                                fontStyle:
-                                    FontStyle
-                                        .italic,
-                              ),
-                            ),
-                          ],
-                        ),
+                          );
+                        },
                       ),
 
                       const SizedBox(

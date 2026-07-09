@@ -269,7 +269,9 @@ class HomePage extends StatelessWidget {
       height: 65,
       decoration: BoxDecoration(
         color:
-            Colors.green.withOpacity(0.2),
+            Colors.green.withValues(
+          alpha: 0.2,
+        ),
         borderRadius:
             BorderRadius.circular(15),
       ),

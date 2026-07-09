@@ -1,9 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:laundry_app_flutter/constants/app_colors.dart';
+import 'package:laundry_app_flutter/services/notification_service.dart';
 import 'package:laundry_app_flutter/widgets/custom_bottom_navbar.dart';
 
-class StatusPage extends StatelessWidget {
+class StatusPage extends StatefulWidget {
   const StatusPage({super.key});
+
+  @override
+  State<StatusPage> createState() =>
+      _StatusPageState();
+}
+
+class _StatusPageState
+    extends State<StatusPage> {
+  bool _notificationShown = false;
+
+  @override
+  void initState() {
+    super.initState();
+    showStatusNotification();
+  }
+
+  Future<void> showStatusNotification() async {
+    await Future.delayed(
+      const Duration(seconds: 2),
+    );
+
+    if (!mounted || _notificationShown) {
+      return;
+    }
+
+    _notificationShown = true;
+    await NotificationService
+        .showLaundryFinishedNotification();
+  }
 
   @override
   Widget build(BuildContext context) {

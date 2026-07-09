@@ -1,8 +1,8 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:laundry_app_flutter/constants/app_colors.dart';
+import 'package:laundry_app_flutter/storage/shared_pref_service.dart';
 import 'package:laundry_app_flutter/views/get_started/get_started_page.dart';
-import 'package:laundry_app_flutter/views/login/login_page.dart';
+import 'package:laundry_app_flutter/views/home/home_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -17,16 +17,27 @@ class _SplashPageState
   @override
   void initState() {
     super.initState();
+    checkLoginStatus();
+  }
 
-    Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) =>
-              const GetStartedPage(),
-        ),
-      );
-    });
+  Future<void> checkLoginStatus() async {
+    await Future.delayed(
+      const Duration(seconds: 3),
+    );
+
+    final isLogin =
+        await SharedPrefService.getLoginStatus();
+
+    if (!mounted) return;
+
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => isLogin
+            ? const HomePage()
+            : const GetStartedPage(),
+      ),
+    );
   }
 
   @override

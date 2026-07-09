@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:laundry_app_flutter/constants/app_colors.dart';
+import 'package:laundry_app_flutter/storage/shared_pref_service.dart';
 import 'package:laundry_app_flutter/views/login/login_page.dart';
 import 'package:laundry_app_flutter/widgets/custom_bottom_navbar.dart';
 
@@ -31,7 +32,14 @@ class AccountPage extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
+                await SharedPrefService
+                    .removeLoginStatus();
+
+                if (!context.mounted) {
+                  return;
+                }
+
                 Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(

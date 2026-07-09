@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:laundry_app_flutter/constants/app_colors.dart';
+import 'package:laundry_app_flutter/storage/shared_pref_service.dart';
 import 'package:laundry_app_flutter/views/home/home_page.dart';
 import 'package:laundry_app_flutter/widgets/custom_button.dart';
 import 'package:laundry_app_flutter/widgets/custom_textfield.dart';
@@ -24,7 +24,7 @@ class _LoginPageState
 
   bool isObscure = true;
 
-  void login() {
+  Future<void> login() async {
     String email =
         emailController.text.trim();
 
@@ -34,6 +34,11 @@ class _LoginPageState
     if (email ==
             'admin@gmail.com' &&
         password == '123456') {
+      await SharedPrefService
+          .saveLoginStatus(true);
+
+      if (!mounted) return;
+
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
